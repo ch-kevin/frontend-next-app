@@ -1,5 +1,4 @@
 import { db } from '@/db';
-import sleep from '@/utils';
 import Link from 'next/link'
 import { notFound } from 'next/navigation';
 
@@ -7,13 +6,13 @@ import SnippetDelButtons from '@/components/snippet-el-button';
 
 
 export default async function page({ params }: { params: Promise<{ id: string }> }) {
-    await sleep(3000)
     const props = await params;
-    const snippetsById: {code: string,title: string}[] = await db.$queryRaw`SELECT * FROM Snippet Where id == ${parseInt(props.id)};`
-    if(snippetsById.length == 0) {
+    const result = await db.snippet.findFirst({
+        where: { id: +props.id}
+    })
+    if(!result) {
         return notFound()
     }
-    const result = snippetsById[0];
     return (
         <>
             <div className='flex items-cente justify-between mt-10'>
