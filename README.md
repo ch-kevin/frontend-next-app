@@ -16,6 +16,11 @@ bun dev
 
 npx prisma studio
 
-
+model Snippet {
+  id    Int     @id @default(autoincrement())
+  title String  @unique
+  code  String?
+}
+npx prisma init --datasource-provider sqlite
 https://vercel.com/templates/next.js/platforms-starter-kit
 ```
