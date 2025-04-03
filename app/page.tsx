@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Key, ReactElement, JSXElementConstructor, ReactNode, ReactPortal } from "react";
 export default async function Home() {
 
-  const snippet: any[] = await db.snippet.findMany();
+  const snippet: any[] = await db.$queryRaw`SELECT * FROM snippet;`
 
   return (
     <>
