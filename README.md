@@ -15,4 +15,7 @@ bun dev
 
 
 npx prisma studio
+
+
+https://vercel.com/templates/next.js/platforms-starter-kit
 ```
