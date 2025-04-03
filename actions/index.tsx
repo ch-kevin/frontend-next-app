@@ -21,7 +21,7 @@ export async function editSnippetById(id: number,code: string) {
     redirect(`/`)
 }
 
-export async function createSnippet(prevState:{message: string},formDate: any) {
+export async function createSnippet(prevState:{message: string},formDate: FormData) {
 
     const title: string = formDate.get("title") as string
     const code : string= formDate.get("code") as string
@@ -50,5 +50,4 @@ export async function createSnippet(prevState:{message: string},formDate: any) {
     })
     redirect("/")
 
-    return snippet
   }

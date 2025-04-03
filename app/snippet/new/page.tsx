@@ -9,8 +9,7 @@ const initState = {
 export default function pages() {
 
   const [state,formAction] = useActionState(createSnippet,initState)
-
- 
+  
   return (
     <form action={formAction}>
       <h3 className='font-bold mb-3 text-3xl text-center'>create</h3>
