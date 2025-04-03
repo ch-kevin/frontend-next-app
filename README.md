@@ -22,5 +22,7 @@ model Snippet {
   code  String?
 }
 npx prisma init --datasource-provider sqlite
+
+数据库变动
 https://vercel.com/templates/next.js/platforms-starter-kit
 ```
